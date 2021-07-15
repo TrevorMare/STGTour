@@ -1,4 +1,4 @@
-# ST GTour
+# ST GTour - Under Construction
 
 ## Welcome Message
 Welcome to Sir Trixalot's Guided Tour Service. If you look out your left window you'll see the famous Blazor Beast, On the right you'll see some wanting developers.
@@ -41,7 +41,7 @@ This project uses [popper.js](https://popper.js.org/) to align the tour steps. K
 
 Trevor Maré - [trevorm336dev@gmail.com](mailto:trevorm336dev@gmail.com)
 
-Project Link - [GTour](https://github/)
+Project Link - [GTour](https://github.com/TrevorMare/STGTour)
 
 # Stuff I learned
 1. I really liked the Styles and Javascript Isolation that .net has brought us. It really cleans up the host page considerably.
