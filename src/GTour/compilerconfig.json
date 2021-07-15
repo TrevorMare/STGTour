@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Components/GuidedTour.razor.css",
+    "inputFile": "Components/GuidedTour.razor.less"
+  },
+  {
+    "outputFile": "Components/GuidedTourStep.razor.css",
+    "inputFile": "Components/GuidedTourStep.razor.less"
+  }
+]

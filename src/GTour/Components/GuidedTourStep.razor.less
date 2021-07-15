@@ -1,0 +1,95 @@
+﻿@cancel-color: #ff6a00;
+@previous-color: #6e4caf;
+@next-color: #4c88af;
+@complete-color: #4CAF50;
+@offset-color: white;
+@border-color: #aeb2b5;
+
+.guided-tour-step-wrapper {
+  .guided-tour-step-header {
+  }
+  .guided-tour-step-content {
+  }
+  .guided-tour-step-footer {
+  }
+}
+
+.theme-default-step-wrapper {
+  .theme-default-step-header {
+    border-bottom: solid 1px @border-color;
+    padding-bottom: 0.2rem;
+
+    .theme-default-step-header-title {
+      text-transform: uppercase;
+      color: #0f9619;
+    }
+  }
+
+  .theme-default-step-content {
+    border-bottom: solid 1px @border-color;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .theme-default-step-footer {
+    padding-top: 0.2rem;
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+  }
+}
+
+.theme-default-button {
+  border: 1px solid transparent;
+  color: @offset-color;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  box-sizing: border-box;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin: 0.2rem;
+
+  &.cancel-button {
+    background-color: @cancel-color;
+
+    &:hover {
+      background-color: @offset-color;
+      color: @cancel-color;
+      border-color: @cancel-color;
+    }
+  }
+
+  &.previous-button {
+    background-color: @previous-color;
+
+    &:hover {
+      background-color: @offset-color;
+      color: @previous-color;
+      border-color: @previous-color;
+    }
+  }
+
+  &.next-button {
+    background-color: @next-color;
+
+    &:hover {
+      background-color: @offset-color;
+      color: @next-color;
+      border-color: @next-color;
+    }
+  }
+
+  &.complete-button {
+    background-color: @complete-color;
+
+    &:hover {
+      background-color: @offset-color;
+      color: @complete-color;
+      border-color: @complete-color;
+    }
+  }
+}

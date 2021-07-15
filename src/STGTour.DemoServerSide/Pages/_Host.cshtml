@@ -1,0 +1,60 @@
+﻿@page "/"
+@namespace STGTour.DemoServerSide.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STGTour.DemoServerSide</title>
+  <base href="~/" />
+  <link rel="stylesheet" href="_content/GTour/css/styles.css" />
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+  <link href="css/site.css" rel="stylesheet" />
+  <link href="STGTour.DemoServerSide.styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+  <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+  <div id="blazor-error-ui">
+    <environment include="Staging,Production">
+      An error has occurred. This application may no longer respond until reloaded.
+    </environment>
+    <environment include="Development">
+      An unhandled exception has occurred. See browser dev tools for details.
+    </environment>
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+  </div>
+
+  <script src="_framework/blazor.server.js"></script>
+
+  <style>
+    .guided-tour-wrapper[data-popper-placement^='top'] > .my-arrow {
+      bottom: -12px;
+      transform: rotate(180deg) !important;
+    }
+
+    .guided-tour-wrapper[data-popper-placement^='bottom'] > .my-arrow {
+      top: -12px;
+    }
+
+    .guided-tour-wrapper[data-popper-placement^='left'] > .my-arrow {
+      right: -12px;
+      transform: rotate(90deg) !important;
+    }
+
+    .guided-tour-wrapper[data-popper-placement^='right'] > .my-arrow {
+      left: -12px;
+      transform: rotate(-90deg) !important;
+    }
+   
+  </style>
+
+</body>
+</html>

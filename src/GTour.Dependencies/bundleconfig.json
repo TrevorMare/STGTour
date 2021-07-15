@@ -1,0 +1,37 @@
+﻿[
+  // Site JS
+  {
+    "outputFileName": "wwwroot/js/JsInteropPopper.min.js",
+    "inputFiles": [
+      "npm/src/JsInteropPopper.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/JsInteropCommon.min.js",
+    "inputFiles": [
+      "npm/src/JsInteropCommon.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  },
+  // Vendor JS
+  {
+    "outputFileName": "wwwroot/js/vendor.min.js",
+    "inputFiles": [
+      "npm/node_modules/@popperjs/core/dist/umd/popper.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  }
+]

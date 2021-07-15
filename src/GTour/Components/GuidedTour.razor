@@ -1,0 +1,26 @@
+﻿@inherits GTourComponent
+
+@if (OverlayEnabled && IsActive)
+{
+  <div @ref="OverlayElement" class="guided-tour-overlay @SelectedTheme.GTourOverlay @OverlayClass" @onclick="@(async (e) => { if (CloseOnOverlayClick) await TourService.CancelTour(); })"></div>
+}
+<div @ref="WrapperElement" hidden="@(!IsActive)" role="tooltip" class="guided-tour-wrapper @SelectedTheme.GTourWrapper @TourWrapperClass">
+  <CascadingValue Value=this>
+    @ChildContent
+  </CascadingValue>
+
+  @if (ShowArrow)
+  {
+    if (ArrowContent == null)
+    {
+      <div class="arrow @SelectedTheme.GTourArrow @ArrowClass" data-popper-arrow></div>
+    }
+    else
+    {
+      @ArrowContent
+    }
+  }
+</div>
+
+
+
