@@ -51,3 +51,10 @@ a, .btn-link {
 
 
 
+    .element-highlight {
+        border: solid 2px #008aff;
+        z-index: 9;
+        position: relative;
+        background-color: white;
+      }
+      

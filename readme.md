@@ -6,7 +6,7 @@ Welcome to Sir Trixalot's Guided Tour Service. If you look out your left window 
 This plugin was inspired by all the Angular npm packages that are so freely available for quick starts and not so much for Blazor. Additionally, since 
 the .net5 release I have been burning to try it out. So this is my attempt at a contribution to the community and I really hope you find it usefull and saves you some time.
 
-A live [demo](https://www.google.com) can be found here. TODO
+A live [demo](https://www.google.com) cannot be found here. TODO - Busy building the demo & help site
 
 ## Important Notes
 This plugin relies on .net5 and can be ported if you want. The whole idea for me regarding this project was to spend some time on the framework. It might also not have all the features of one of the existing packages but I'm pretty sure it can be extended to do what you want. Another thing I wanted to try was to use the minimum javascript to see how far I can push Blazor.
@@ -98,7 +98,7 @@ This project uses [popper.js](https://popper.js.org/) to align the tour steps. K
 
 # Holler
 
-Trevor Maré - [trevorm336dev@gmail.com](mailto:trevorm336dev@gmail.com)
+Trevor Maré - [trevorm336dev@gmail.com](mailto:trevorm336@gmail.com)  
 Project Link - [GTour](https://github.com/TrevorMare/STGTour)
 
 Buy me a beer
