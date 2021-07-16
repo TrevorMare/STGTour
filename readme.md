@@ -21,7 +21,11 @@ To build this project you need to have Satan's tool installed (NodeJs) as this i
 
 ## Installation
 
-- Download with nuget
+Download package and install [nuget](https://www.nuget.org/packages/STGTour.GTour/)
+
+```shell 
+    dotnet add package STGTour.GTour 
+```
 
 ## Usage
 ### Register the service in Startup.cs
@@ -104,5 +108,5 @@ Distributed under the WTFPL License. See [LICENSE](http://www.wtfpl.net/) for mo
 # Stuff I learned
 1. I really liked the Styles and Javascript Isolation that .net has brought us. It really cleans up the host page considerably.
 2. I do think some more work can be done on getting npm packages and the projects to play along better, especially since it's "early" days for Blazor and a lot of functionality is still lacking in the UI Interop department.
-3. 
+
 
