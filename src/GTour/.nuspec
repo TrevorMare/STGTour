@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>STGTour.GTour</id>
+        <version>1.0.0</version>
+        <authors>Trevor Maré</authors>
+        <owners>TrevorMare</owners>
+        <projectUrl>https://github.com/TrevorMare/STGTour</projectUrl>
+        <license type="expression">WTFPL</license>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <releaseNotes>Initial Release</releaseNotes>
+        <description>A Blazor Guided UI Tour component and service</description>
+        <!-- Tags appear in the gallery and can be used for tag searches -->
+        <tags>blazor tour ui guided</tags>
+    </metadata>
+</package>

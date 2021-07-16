@@ -1,5 +1,4 @@
 ﻿[
-  // Site JS
   {
     "outputFileName": "wwwroot/js/JsInteropPopper.min.js",
     "inputFiles": [
@@ -22,7 +21,6 @@
     },
     "sourceMap": false
   },
-  // Vendor JS
   {
     "outputFileName": "wwwroot/js/vendor.min.js",
     "inputFiles": [

@@ -2,12 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+      <PackageId>STGTour.GTour</PackageId>
+      <Version>1.0.0</Version>
+      <Authors>Trevor Maré</Authors>
+      <PackageTags>Blazor;UI Tour;Guided Tour;Tour;</PackageTags>
+      <Description>
+        A Blazor Guided UI Tour component and service
+      </Description>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0"/>
+  </ItemGroup>
   
   <ItemGroup>
     <SupportedPlatform Include="browser" />
