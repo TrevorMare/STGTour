@@ -1,4 +1,4 @@
-# ST GTour - Under Construction
+# ST GTour 
 
 ## Welcome Message
 Welcome to Sir Trixalot's Guided Tour Service. If you look out your left window you'll see the famous Blazor Beast, On the right you'll see some wanting developers.
@@ -99,8 +99,10 @@ This project uses [popper.js](https://popper.js.org/) to align the tour steps. K
 # Holler
 
 Trevor Maré - [trevorm336dev@gmail.com](mailto:trevorm336dev@gmail.com)
-
 Project Link - [GTour](https://github.com/TrevorMare/STGTour)
+
+Buy me a beer
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=JTM723EPNE5N6)
 
 # License
 Distributed under the WTFPL License. See [LICENSE](http://www.wtfpl.net/) for more information.
