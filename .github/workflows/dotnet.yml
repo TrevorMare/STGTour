@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./src/GTour/GTour.csproj
     - name: Build
-      run: dotnet build ./src/GTour/GTour.csproj --no-restore
+      run: dotnet build ./src/GTour/GTour.csproj --no-restore --configuration Release
     - name: Push with dotnet
-      run: dotnet nuget push ./src/GTour/bin/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ./src/GTour/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
 
