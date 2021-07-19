@@ -6,19 +6,32 @@
 
 <GuidedTour TourId="NoTheme" OverlayEnabled="true">
     <GuidedTourStep Title="I Have No Theme" StepName="step1" TourStepSequence="1" ElementSelector="[data-no-theme]">
-      <span>Look Mah, no styles</span>
+        <span>Look Mah, no styles</span>
+    </GuidedTourStep>
+     <GuidedTourStep Title="I Have No Theme" StepName="step2" TourStepSequence="2" ElementSelector="[data-no-theme]">
+        <span>Second step</span>
     </GuidedTourStep>
 </GuidedTour>
 
 <GuidedTour TourId="BootstrapTheme" OverlayEnabled="true">
-    <GuidedTourStep Title="I Have a BS theme" StepName="step1" TourStepSequence="1" ElementSelector="[data-bootstrap-theme]">
-      <span>Look at all the BS</span>
+    <GuidedTourStep Title="I Have a BS theme" StepName="step1" TourStepSequence="1"
+        ElementSelector="[data-bootstrap-theme]">
+        <span>Look at all the BS</span>
+    </GuidedTourStep>
+    <GuidedTourStep Title="I Have a BS theme" StepName="step2" TourStepSequence="2"
+        ElementSelector="[data-bootstrap-theme]">
+        <span>Second Step</span>
     </GuidedTourStep>
 </GuidedTour>
 
-<GuidedTour TourId="DefaultTheme" OverlayEnabled="true">
-    <GuidedTourStep Title="I Have a BS theme" StepName="step1" TourStepSequence="1" ElementSelector="[data-default-theme]">
-      <span>I'm a pretty little princess</span>
+<GuidedTour TourId="DefaultTheme" OverlayEnabled="true" ShowArrow="false">
+    <GuidedTourStep Title="I Have a BS theme" StepName="step1" TourStepSequence="1"
+        ElementSelector="[data-default-theme]">
+        <span>I'm a pretty little princess</span>
+    </GuidedTourStep>
+    <GuidedTourStep Title="I Have a BS theme" StepName="step2" TourStepSequence="2"
+        ElementSelector="[data-default-theme]">
+        <span>Second step</span>
     </GuidedTourStep>
 </GuidedTour>
 
@@ -31,18 +44,27 @@
 <button class="btn btn-primary" @onclick="StartNoThemeTour">View None Theme</button>
 <button class="btn btn-primary" @onclick="StartDefaultThemeTour">View Default Theme</button>
 <button class="btn btn-primary" @onclick="StartBootstrapThemeTour">View Bootstrap Theme</button>
+<br/>
+<br/>
 
 <div style="width: fit-content;">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item"><div data-no-theme>None - This will apply a blank theme to the component and all styles should be set.</div></li>
-        <li class="list-group-item"><div data-default-theme>Default - This is the default built in theme.</div></li>
-        <li class="list-group-item"><div data-bootstrap-theme>Bootstrap - Bootstrap classes are used for the theme.</div></li>
+        <li class="list-group-item">
+            <div data-no-theme>None - This will apply a blank theme to the component and all styles should be set.</div>
+        </li>
+        <li class="list-group-item">
+            <div data-default-theme>Default - This is the default built in theme.</div>
+        </li>
+        <li class="list-group-item">
+            <div data-bootstrap-theme>Bootstrap - Bootstrap classes are used for the theme.</div>
+        </li>
     </ul>
 </div>
 
 <h3>Adding a Custom Theme</h3>
 
-<p>Create a new theme class and inherit from the GTour.Abstractions.ITheme. Implement the class names to use. Below is an example of the Bootstrap implementation.</p>
+<p>Create a new theme class and inherit from the GTour.Abstractions.ITheme. Implement the class names to use. Below is
+   an example of the Bootstrap implementation.</p>
 
 <pre>
     <code class="language-cs">
@@ -82,7 +104,7 @@
 <h3>Highlight Element</h3>
 
 <p>
-    A highlight class is appended to an element for the current tour step. There is a default supplied and
+    A highlight class is appended to an element for the current tour step. A default implementation is supplied and
     to use this, you should include the styles in the host file. The style name is .element-highlight
     and can also be overwritten with a custom style.
 </p>
@@ -106,25 +128,34 @@
 
 
 @code {
-  [Inject]
-  private GTour.Abstractions.IGTourService GTourService { get; set; }
+    [Inject]
+    private GTour.Abstractions.IGTourService GTourService { get; set; }
 
-  private async Task StartBootstrapThemeTour()
-  {
-      GTour.GTourService.Theme = new GTour.Themes.Bootstrap();
-      await GTourService.StartTour("BootstrapTheme");
-  }
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; }
 
-  private async Task StartNoThemeTour()
-  {
-      GTour.GTourService.Theme = new GTour.Themes.None();
-      await GTourService.StartTour("NoTheme");
-  }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        await JSRuntime.InvokeVoidAsync("higlightCode");
+    }
 
-  private async Task StartDefaultThemeTour()
-  {
-      GTour.GTourService.Theme = new GTour.Themes.Default();
-      await GTourService.StartTour("DefaultTheme");
-  }
+    private async Task StartBootstrapThemeTour()
+    {
+        GTour.GTourService.Theme = new GTour.Themes.Bootstrap();
+        await GTourService.StartTour("BootstrapTheme");
+    }
+
+    private async Task StartNoThemeTour()
+    {
+        GTour.GTourService.Theme = new GTour.Themes.None();
+        await GTourService.StartTour("NoTheme");
+    }
+
+    private async Task StartDefaultThemeTour()
+    {
+        GTour.GTourService.Theme = new GTour.Themes.Default();
+        await GTourService.StartTour("DefaultTheme");
+    }
 
 }

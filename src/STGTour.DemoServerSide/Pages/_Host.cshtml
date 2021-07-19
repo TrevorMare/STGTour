@@ -32,12 +32,19 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
   </div>
+
+  <script>
+    window.higlightCode = () => {
+      hljs.highlightAll();
+    };
+  </script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script>
   <script src="_framework/blazor.server.js"></script>
-  <script>hljs.highlightAll();</script>
+
   <style>
     .guided-tour-wrapper[data-popper-placement^='top'] > .my-arrow {
-      bottom: -12px;
+      bottom: -16px;
       transform: rotate(180deg) !important;
     }
 
@@ -55,6 +62,9 @@
       transform: rotate(-90deg) !important;
     }
    
+   .font-style-italic {
+     font-style: italic;
+   }
   </style>
 
 </body>
