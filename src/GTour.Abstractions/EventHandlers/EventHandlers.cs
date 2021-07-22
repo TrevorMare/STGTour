@@ -16,7 +16,11 @@ namespace GTour.Abstractions.EventHandlers
   public delegate void TourStartingHandler(IGTourService sender, IGTour gTour);
 
   public delegate void TourCanceledHandler(IGTourService sender, IGTour gTour);
+  
+  public delegate void TourCancelingHandler(IGTourService sender, IGTour gTour);
 
+  public delegate void TourCompletingHandler(IGTourService sender, IGTour gTour);
+  
   public delegate void TourCompletedHandler(IGTourService sender, IGTour gTour);
 
 }
