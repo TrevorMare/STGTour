@@ -15,7 +15,9 @@ namespace GTour.Abstractions
     event TourDeRegisteredHandler OnTourDeRegistered;
     event TourStartingHandler OnTourStarting;
     event TourStartedHandler OnTourStarted;
+    event TourCancelingHandler OnTourCanceling;
     event TourCanceledHandler OnTourCanceled;
+    event TourCompletingHandler OnTourCompleting;
     event TourCompletedHandler OnTourCompleted;
     #endregion
 
