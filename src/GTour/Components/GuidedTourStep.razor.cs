@@ -123,7 +123,7 @@ namespace GTour.Components
     /// Gets or sets the Child Content of the step
     /// </summary>
     [Parameter]
-    public RenderFragment ChildContent { get; set; }
+    public RenderFragment<IGTourStep> ChildContent { get; set; }
 
     /// <summary>
     /// Gets or sets the Popup Orientation
