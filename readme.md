@@ -20,11 +20,13 @@ To build this project you need to have Satan's tool installed (NodeJs) as this i
 # TLDR
 
 ## Installation
+![Nuget](https://img.shields.io/nuget/v/STGTour.GTour?style=plastic)
+
 
 Download package and install [nuget](https://www.nuget.org/packages/STGTour.GTour/)
 
 ```shell 
-    dotnet add package STGTour.GTour 
+    dotnet add package STGTour.GTour --version 1.0.1
 ```
 
 ## Usage

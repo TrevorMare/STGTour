@@ -3,12 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
       <PackageId>STGTour.GTour</PackageId>
-      <Version>1.0.1</Version>
+      <Version>1.0.2</Version>
       <Authors>Trevor Maré</Authors>
       <PackageTags>Blazor;UI Tour;Guided Tour;Tour;</PackageTags>
       <Description>
-        A Blazor Guided UI Tour component and service
+        A Guided UI Tour component and service for Blazor
       </Description>
+      <RepositoryUrl>https://github.com/TrevorMare/STGTour</RepositoryUrl>
+      <PackageReleaseNotes>
+        1.0.2 Added the repository URL to nuget
+      </PackageReleaseNotes>
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
