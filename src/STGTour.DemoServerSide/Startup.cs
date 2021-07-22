@@ -32,6 +32,7 @@ namespace STGTour.DemoServerSide
       services.AddServerSideBlazor();
       services.AddSingleton<WeatherForecastService>();
       services.UseGTour();
+      
       //GTourService.Theme = new GTour.Themes.Bootstrap();
     }
 

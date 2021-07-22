@@ -30,7 +30,7 @@ Download package and install [nuget](https://www.nuget.org/packages/STGTour.GTou
 ```
 
 ## Usage
-### Register the service in Startup.cs
+### Register the service in Startup.cs (Server Side)
 
 ```c
     using GTour;
@@ -43,6 +43,25 @@ Download package and install [nuget](https://www.nuget.org/packages/STGTour.GTou
       ...
     }
 ```
+### Register the service in Startup.cs (WASM)
+
+```c
+    using GTour;
+    ...
+    ...
+    public static async Task Main(string[] args)
+    {
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+        builder.RootComponents.Add<App>("#app");
+
+        builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+        builder.Services.UseGTour();
+
+
+        await builder.Build().RunAsync();
+    }
+```
+
 
 ### Add Styles to the _Host.cshtml (optional)
 
