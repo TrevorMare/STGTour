@@ -6,7 +6,7 @@ Welcome to Sir Trixalot's Guided Tour Service. If you look out your left window 
 This plugin was inspired by all the Angular npm packages that are so freely available for quick starts and not so much for Blazor. Additionally, since 
 the .net5 release I have been burning to try it out. So this is my attempt at a contribution to the community and I really hope you find it usefull and saves you some time.
 
-A live [demo](https://www.google.com) cannot be found here. TODO - Busy building the demo & help site
+Check out the documentation and a live [demo](https://trevormare.github.io/STGTour/guidedtour) here.
 
 ## Important Notes
 This plugin relies on .net5 and can be ported if you want. The whole idea for me regarding this project was to spend some time on the framework. It might also not have all the features of one of the existing packages but I'm pretty sure it can be extended to do what you want. Another thing I wanted to try was to use the minimum javascript to see how far I can push Blazor.
@@ -20,13 +20,13 @@ To build this project you need to have Satan's tool installed (NodeJs) as this i
 # TLDR
 
 ## Installation
-![Nuget](https://img.shields.io/nuget/v/STGTour.GTour?style=plastic)
+![Nuget](https://img.shields.io/nuget/v/STGTour.GTour?style=for-the-badge)
 
 
 Download package and install [nuget](https://www.nuget.org/packages/STGTour.GTour/)
 
 ```shell 
-    dotnet add package STGTour.GTour --version 1.0.1
+    dotnet add package STGTour.GTour --version 1.0.2
 ```
 
 ## Usage
