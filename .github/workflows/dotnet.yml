@@ -21,4 +21,11 @@ jobs:
       run: dotnet build ./src/GTour/GTour.csproj --no-restore --configuration Release
     - name: Push with dotnet
       run: dotnet nuget push ./src/GTour/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
-
+    - name: Build Demo Site
+      run: dotnet publish ./src/STGTour.DemoWASM/STGTour.DemoWASM.csproj -c Release -o release --nologo
+    - name: Commit wwwroot to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: release/wwwroot
