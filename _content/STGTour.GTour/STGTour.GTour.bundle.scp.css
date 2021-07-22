@@ -1,0 +1,133 @@
+@import '';
+
+/* _content/STGTour.GTour/Components/GuidedTour.razor.rz.scp.css */
+.guided-tour-overlay[b-3g4q10f1us] {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+.guided-tour-wrapper[b-3g4q10f1us] {
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.guided-tour-wrapper .arrow[b-3g4q10f1us],
+.guided-tour-wrapper .arrow[b-3g4q10f1us]::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+.guided-tour-wrapper .arrow[b-3g4q10f1us] {
+  visibility: hidden;
+}
+.guided-tour-wrapper .arrow.force-hide[b-3g4q10f1us]::before {
+  visibility: hidden !important;
+}
+.guided-tour-wrapper .arrow[b-3g4q10f1us]::before {
+  background: white;
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+.guided-tour-wrapper .arrow[b-3g4q10f1us]::before.force-hide {
+  visibility: hidden !important;
+}
+.guided-tour-wrapper[data-popper-placement^='top'] > .arrow[b-3g4q10f1us] {
+  bottom: -4px;
+}
+.guided-tour-wrapper[data-popper-placement^='bottom'] > .arrow[b-3g4q10f1us] {
+  top: -4px;
+}
+.guided-tour-wrapper[data-popper-placement^='left'] > .arrow[b-3g4q10f1us] {
+  right: -4px;
+}
+.guided-tour-wrapper[data-popper-placement^='right'] > .arrow[b-3g4q10f1us] {
+  left: -4px;
+}
+.theme-default-overlay[b-3g4q10f1us] {
+  background-color: rgba(33, 33, 33, 0.5);
+}
+.theme-default-wrapper[b-3g4q10f1us] {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.6rem;
+  border-radius: 0.2rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+}
+.theme-default-arrow[b-3g4q10f1us]::before {
+  background-color: white;
+}
+/* _content/STGTour.GTour/Components/GuidedTourStep.razor.rz.scp.css */
+.theme-default-step-wrapper .theme-default-step-header[b-cf87it2jly] {
+  border-bottom: solid 1px #aeb2b5;
+  padding-bottom: 0.2rem;
+}
+.theme-default-step-wrapper .theme-default-step-header .theme-default-step-header-title[b-cf87it2jly] {
+  text-transform: uppercase;
+  color: #0f9619;
+}
+.theme-default-step-wrapper .theme-default-step-content[b-cf87it2jly] {
+  border-bottom: solid 1px #aeb2b5;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+.theme-default-step-wrapper .theme-default-step-footer[b-cf87it2jly] {
+  padding-top: 0.2rem;
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+}
+.theme-default-button[b-cf87it2jly] {
+  border: 1px solid transparent;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  box-sizing: border-box;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0.2rem;
+}
+.theme-default-button.cancel-button[b-cf87it2jly] {
+  background-color: #ff6a00;
+}
+.theme-default-button.cancel-button:hover[b-cf87it2jly] {
+  background-color: white;
+  color: #ff6a00;
+  border-color: #ff6a00;
+}
+.theme-default-button.previous-button[b-cf87it2jly] {
+  background-color: #6e4caf;
+}
+.theme-default-button.previous-button:hover[b-cf87it2jly] {
+  background-color: white;
+  color: #6e4caf;
+  border-color: #6e4caf;
+}
+.theme-default-button.next-button[b-cf87it2jly] {
+  background-color: #4c88af;
+}
+.theme-default-button.next-button:hover[b-cf87it2jly] {
+  background-color: white;
+  color: #4c88af;
+  border-color: #4c88af;
+}
+.theme-default-button.complete-button[b-cf87it2jly] {
+  background-color: #4CAF50;
+}
+.theme-default-button.complete-button:hover[b-cf87it2jly] {
+  background-color: white;
+  color: #4CAF50;
+  border-color: #4CAF50;
+}
