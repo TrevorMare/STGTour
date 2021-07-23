@@ -2,43 +2,43 @@
 
 @if (IsActiveStep)
 {
-<div @ref="StepWrapperElement" class="guided-tour-step-wrapper @SelectedTheme.GTourStepWrapper @WrapperClass">
+<div data-gtourstep-wrapper="@StepName" @ref="StepWrapperElement" class="guided-tour-step-wrapper @SelectedTheme.GTourStepWrapper @WrapperClass">
 
   @if (!string.IsNullOrEmpty(Title) || HeaderContent != null)
   {
-  <div class="guided-tour-step-header @SelectedTheme.GTourStepHeaderWrapper @HeaderClass">
-    @if (!string.IsNullOrEmpty(Title))
-    {
-      <span class="@SelectedTheme.GTourStepHeaderTitle">@Title</span>
-    }
-    else
-    {
-      @HeaderContent(this)
-    }
-  </div>
+    <div data-gtourstep-header-wrapper="@StepName" class="guided-tour-step-header @SelectedTheme.GTourStepHeaderWrapper @HeaderClass">
+        @if (!string.IsNullOrEmpty(Title))
+        {
+          <span data-gtourstep-header="@StepName" class="@SelectedTheme.GTourStepHeaderTitle">@Title</span>
+        }
+        else
+        {
+          @HeaderContent(this)
+        }
+    </div>
   }
 
-  <div class="guided-tour-step-content @SelectedTheme.GTourStepContentWrapper @ContentClass">
+  <div data-gtourstep-content-wrapper="@StepName" class="guided-tour-step-content @SelectedTheme.GTourStepContentWrapper @ContentClass">
     @ChildContent(this)
   </div>
 
-  <div class="guided-tour-step-footer @SelectedTheme.GTourStepFooterWrapper @FooterClass">
+  <div data-gtourstep-footer-wrapper="@StepName" class="guided-tour-step-footer @SelectedTheme.GTourStepFooterWrapper @FooterClass">
     @if (FooterContent != null)
     {
       @FooterContent(this)
     }
     else
     {
-      <button hidden="@(!CanCancelTour)" class="cancel-button @SelectedTheme.GTourStepCancelButton @CancelTourButtonClass" type="button" @onclick="@OnCancelTourClick">
+      <button data-gtourstep-cancel-button="@StepName" hidden="@(!CanCancelTour)" class="cancel-button @SelectedTheme.GTourStepCancelButton @CancelTourButtonClass" type="button" @onclick="@OnCancelTourClick">
         <span>@CancelTourButtonText</span>
       </button>
-      <button hidden="@IsFirstStep" class="previous-button @SelectedTheme.GTourStepPreviousButton @PreviousStepButtonClass" type="button" @onclick="@OnPreviousStepClick">
+      <button data-gtourstep-previous-button="@StepName"hidden="@IsFirstStep" class="previous-button @SelectedTheme.GTourStepPreviousButton @PreviousStepButtonClass" type="button" @onclick="@OnPreviousStepClick">
         <span>@PreviousStepButtonText</span>
       </button>
-      <button hidden="@(IsLastStep)" class="next-button @SelectedTheme.GTourStepNextButton @NextStepButtonClass" type="button" @onclick="@OnNextStepClick">
+      <button data-gtourstep-next-button="@StepName" hidden="@(IsLastStep)" class="next-button @SelectedTheme.GTourStepNextButton @NextStepButtonClass" type="button" @onclick="@OnNextStepClick">
         <span>@NextStepButtonText</span>
       </button>
-      <button hidden="@(!IsLastStep)" class="complete-button @SelectedTheme.GTourStepCompleteButton @CompleteTourButtonClass" type="button" @onclick="@OnCompleteTourClick">
+      <button data-gtourstep-complete-button="@StepName" hidden="@(!IsLastStep)" class="complete-button @SelectedTheme.GTourStepCompleteButton @CompleteTourButtonClass" type="button" @onclick="@OnCompleteTourClick">
         <span>@CompleteTourButtonText</span>
       </button>
     }

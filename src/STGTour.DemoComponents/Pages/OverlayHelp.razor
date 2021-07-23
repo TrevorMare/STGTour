@@ -1,0 +1,80 @@
+@using GTour.Components
+
+
+<h2>Overlay</h2>
+
+<GuidedTour TourId="NoOverlay" OverlayEnabled="false">
+    <GuidedTourStep Title="No Overlay" StepName="step1" TourStepSequence="1" ElementSelector="[data-no-overlay]">
+        <span>Overlay disabled, I feel naked</span>
+    </GuidedTourStep>
+</GuidedTour>
+
+<GuidedTour TourId="CloseClickOverlay" OverlayEnabled="true" CloseOnOverlayClick="true">
+    <GuidedTourStep Title="Clickable Overlay" StepName="step1" TourStepSequence="1" ElementSelector="[data-close-click]">
+        <span>Click the overlay to stop the tour</span>
+    </GuidedTourStep>
+</GuidedTour>
+
+<p>
+    An overlay can be displayed when the tour is active, by default this is on. There is also an option
+    to stop the tour when the overlay is clicked. The overlay element class can also be set with
+    the OverlayClass property.
+</p>
+
+<h3>Disabling the overlay</h3>
+
+<div data-no-overlay>
+    <p> The overlay can be disabled by setting the OverlayEnabled property on the Tour</p>
+</div>
+
+<button class="btn btn-primary" @onclick="@(() => GTourService.StartTour("NoOverlay"))">No Overlay</button>
+
+<br/>
+<br/>
+
+<pre>
+    <code style="language-html">
+        @("<GuidedTour TourId=\"DefaultTheme\" OverlayEnabled=\"false\" CloseClickOverlay=\"false\" >")
+@(" ....") 
+@("</GuidedTour>") 
+    </code>
+</pre>
+
+<h3>Close on Click</h3>
+
+<div data-close-click>
+    <p>
+        To close the tour when the overlay is clicked, set the CloseOnOverlayClick to true. If the 
+        tour is on the last step it will internally call the TourCompleted action and if not it
+        will call the TourCancelled action. 
+    </p>
+</div>
+
+<button class="btn btn-primary" @onclick="@(() => GTourService.StartTour("CloseClickOverlay"))">Clickable Overlay</button>
+
+<br/>
+<br/>
+
+<pre>
+    <code style="language-html">
+        @("<GuidedTour TourId=\"DefaultTheme\" OverlayEnabled=\"true\" CloseClickOverlay=\"true\" >")
+@(" ....") 
+@("</GuidedTour>") 
+    </code>
+</pre>
+
+@code {
+    [Inject]
+    private GTour.Abstractions.IGTourService GTourService { get; set; }
+
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        GTour.GTourService.Theme = new GTour.Themes.Default();
+        base.OnAfterRender(firstRender);
+        await JSRuntime.InvokeVoidAsync("higlightCode");
+    }
+
+}

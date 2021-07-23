@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GTour\GTour.csproj" />
+    <ProjectReference Include="..\STGTour.DemoComponents\STGTour.DemoComponents.csproj" />
   </ItemGroup>
 
 </Project>
