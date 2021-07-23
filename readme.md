@@ -119,7 +119,7 @@ This project uses [popper.js](https://popper.js.org/) to align the tour steps. K
 
 # Holler
 
-Trevor Maré - [trevorm336dev@gmail.com](mailto:trevorm336@gmail.com)  
+Trevor Maré - [trevorm336@gmail.com](mailto:trevorm336@gmail.com)  
 Project Link - [GTour](https://github.com/TrevorMare/STGTour)
 
 Buy me a beer

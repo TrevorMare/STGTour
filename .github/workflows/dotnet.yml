@@ -29,7 +29,7 @@ jobs:
       run: npx react-snap
     
     # change base tag in all html files to include subfolder
-    - name: Change base tag
+    - name: Remove PreRender Script Tags
       working-directory: Prerender/output/wwwroot
       run: |
         find . -name "*.html" | while read htmlFile; do
