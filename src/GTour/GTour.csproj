@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
       <PackageId>STGTour.GTour</PackageId>
-      <Version>1.0.3</Version>
+      <Version>1.0.4</Version>
       <Authors>Trevor Maré</Authors>
       <PackageTags>blazor;ui tour;guided tour;tour;stgtour;gtour;stgtour.gtour</PackageTags>
       <Description>
@@ -12,6 +12,7 @@
       <RepositoryUrl>https://github.com/TrevorMare/STGTour</RepositoryUrl>
       <PackageProjectUrl>https://github.com/TrevorMare/STGTour</PackageProjectUrl>
       <PackageReleaseNotes>
+        1.0.4 Added attributes to assist in E2E testing.
         1.0.3 Cleaned up package dependencies and added readme.md
         1.0.2 Added the repository URL to nuget
         1.0.1 Nuget links

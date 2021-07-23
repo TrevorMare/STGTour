@@ -21,7 +21,7 @@ To build this project you need to have Satan's tool installed (NodeJs) as this i
 
 ## Installation
 ![Nuget](https://img.shields.io/nuget/v/STGTour.GTour?style=for-the-badge)
-
+[![.NET](https://github.com/TrevorMare/STGTour/actions/workflows/dotnet.yml/badge.svg)](https://github.com/TrevorMare/STGTour/actions/workflows/dotnet.yml)
 
 Download package and install [nuget](https://www.nuget.org/packages/STGTour.GTour/)
 
