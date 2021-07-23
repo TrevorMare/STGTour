@@ -19,19 +19,31 @@ jobs:
       run: dotnet restore ./src/GTour/GTour.csproj
     - name: Build
       run: dotnet build ./src/GTour/GTour.csproj --no-restore --configuration Release
-    - name: Push with dotnet
+    - name: Push Nuget Package with dotnet
       run: dotnet nuget push ./src/GTour/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
     - name: Build Demo Site
-      run: dotnet publish ./src/STGTour.DemoWASM/STGTour.DemoWASM.csproj -c Release -o release --nologo
-    # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to STGTour
-      run: sed -i 's/<base href="\/" \/>/<base href="\/STGTour\/" \/>/g' release/wwwroot/index.html
+      run: dotnet publish ./src/STGTour.DemoWASM/STGTour.DemoWASM.csproj -c Release -o Prerender/output --nologo
+    # Use NodeJS react-snap utitility to prerender static website
+    - name: Pre-render Blazor client
+      working-directory: Prerender
+      run: npx react-snap
+    
+    # change base tag in all html files to include subfolder
+    - name: Change base tag
+      working-directory: Prerender/output/wwwroot
+      run: |
+        find . -name "*.html" | while read htmlFile; do
+            sed -i 's/<base href="\/"/<base href="\/STGTour\/"/g' $htmlFile
+            sed -i 's/<script type="text\/javascript">var Module; window.__wasmmodulecallback__(); delete window.__wasmmodulecallback__;<\/script><script src="_framework\/dotnet.5.0.1.js" defer="" integrity="sha256-SWZOE2EsCqc\/7dPgJrcFqUvVvdeJ9cipeZ2NFMC9v2s=" crossorigin="anonymous"><\/script>//g' $htmlFile
+        done
+    
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
     - name: Add .nojekyll file
-      run: touch release/wwwroot/.nojekyll
+      run: touch Prerender/output/wwwroot/.nojekyll
+
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: release/wwwroot
+        FOLDER: Prerender/output/wwwroot
