@@ -3,17 +3,23 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
       <PackageId>STGTour.GTour</PackageId>
-      <Version>1.0.2</Version>
+      <Version>1.0.3</Version>
       <Authors>Trevor Maré</Authors>
-      <PackageTags>Blazor;UI Tour;Guided Tour;Tour;</PackageTags>
+      <PackageTags>blazor;ui tour;guided tour;tour;stgtour;gtour;stgtour.gtour</PackageTags>
       <Description>
         A Guided UI Tour component and service for Blazor
       </Description>
       <RepositoryUrl>https://github.com/TrevorMare/STGTour</RepositoryUrl>
+      <PackageProjectUrl>https://github.com/TrevorMare/STGTour</PackageProjectUrl>
       <PackageReleaseNotes>
+        1.0.3 Cleaned up package dependencies and added readme.md
         1.0.2 Added the repository URL to nuget
+        1.0.1 Nuget links
+        1.0.0 Initial Release
       </PackageReleaseNotes>
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <RepositoryType>Github</RepositoryType>
+      <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0"/>
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   
   <ItemGroup>
@@ -39,6 +47,7 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
+    <None Include="..\..\readme.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>
