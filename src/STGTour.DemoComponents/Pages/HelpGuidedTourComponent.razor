@@ -3,8 +3,8 @@
 
 <h3>Guided Tour</h3>
 
-<button class="btn btn-primary" type="button" @onclick="@(e => StartTour("FormGuidedTour"))">Start form Tour</button>
-<button class="btn btn-primary" type="button" @onclick="@(e => StartTour("ScrollGuidedTour"))" data-scroll-start>Start scroll Tour</button>
+<button data-e2e="btn_frm_tour" class="btn btn-primary" type="button" @onclick="@(e => StartTour("FormGuidedTour"))">Start form Tour</button>
+<button data-e2e="btn_scroll_tour" class="btn btn-primary" type="button" @onclick="@(e => StartTour("ScrollGuidedTour"))" data-scroll-start>Start scroll Tour</button>
 
 <form class="needs-validation" novalidate>
   <div class="form-row">

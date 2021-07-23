@@ -37,7 +37,7 @@
 <div data-no-arrow>
     <p>To turn of the Arrow Element rendering, set the Show Arrow Element on the guided tour</p>
 </div>
-<button class="btn btn-primary" @onclick="@(() => GTourService.StartTour("noArrow"))">View No Arrow</button>
+<button data-e2e="btn_no_arrow" class="btn btn-primary" @onclick="@(() => GTourService.StartTour("noArrow"))">View No Arrow</button>
 <br/>
 <br/>
 <pre>
@@ -56,7 +56,7 @@
         on the Guided Tour.
     </p>
 </div>
-<button class="btn btn-primary" @onclick="@(() => GTourService.StartTour("defaultArrow"))">Default Arrow</button>
+<button data-e2e="btn_default_arrow" class="btn btn-primary" @onclick="@(() => GTourService.StartTour("defaultArrow"))">Default Arrow</button>
 <br/>
 <br/>
 <pre>
@@ -107,7 +107,7 @@
         used as the arrow element. This is accompanied with a style to rotate the icon element.
     </p>
 </div>
-<button class="btn btn-primary" @onclick="@(() => GTourService.StartTour("iconArrow"))">Icon Arrow</button>
+<button data-e2e="btn_icon_arrow" class="btn btn-primary" @onclick="@(() => GTourService.StartTour("iconArrow"))">Icon Arrow</button>
 <br/>
 <br/>
 <pre>

@@ -27,7 +27,7 @@
     <p> The overlay can be disabled by setting the OverlayEnabled property on the Tour</p>
 </div>
 
-<button class="btn btn-primary" @onclick="@(() => GTourService.StartTour("NoOverlay"))">No Overlay</button>
+<button data-e2e="btn_no_overlay" class="btn btn-primary" @onclick="@(() => GTourService.StartTour("NoOverlay"))">No Overlay</button>
 
 <br/>
 <br/>
@@ -50,7 +50,7 @@
     </p>
 </div>
 
-<button class="btn btn-primary" @onclick="@(() => GTourService.StartTour("CloseClickOverlay"))">Clickable Overlay</button>
+<button data-e2e="btn_close_overlay" class="btn btn-primary" @onclick="@(() => GTourService.StartTour("CloseClickOverlay"))">Clickable Overlay</button>
 
 <br/>
 <br/>
