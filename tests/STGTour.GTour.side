@@ -1,0 +1,436 @@
+{
+  "id": "bccd67d2-3167-425a-8b2e-0166b61bee95",
+  "version": "2.0",
+  "name": "STGTour.GTour",
+  "url": "https://trevormare.github.io/STGTour/",
+  "tests": [{
+    "id": "add5e56a-467e-43cd-9dc4-2d8f8233b76e",
+    "name": "Arrow Element Tests",
+    "commands": [{
+      "id": "302db21f-9f7b-4d7a-9b47-75cbb24316e3",
+      "comment": "",
+      "command": "open",
+      "target": "https://trevormare.github.io/STGTour/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aea9d3ce-1a95-4648-84c5-53f0ab97c143",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "25d99d75-3112-4205-9954-d8787b4adb46",
+      "comment": "Wait for the elements to render",
+      "command": "waitForElementVisible",
+      "target": "linkText=Arrow Element",
+      "targets": [
+        ["linkText=Arrow Element", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//a[contains(text(),'Arrow Element')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div/div[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'help/arrow')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Arrow Element')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e6c54877-6830-4e35-9348-90c4e60d70ed",
+      "comment": "Navigate to the Arrow Element Page",
+      "command": "click",
+      "target": "linkText=Arrow Element",
+      "targets": [
+        ["linkText=Arrow Element", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Arrow Element')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div/div[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'help/arrow')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Arrow Element')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "40394eb3-f703-4c72-bb91-2be23364c747",
+      "comment": "Wait for the elements to render",
+      "command": "waitForElementVisible",
+      "target": "xpath=//button[@data-e2e='btn_icon_arrow']",
+      "targets": [
+        ["css=.btn:nth-child(8)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'View No Arrow')]", "xpath:innerText"]
+      ],
+      "value": "2000"
+    }, {
+      "id": "11d600d4-6267-4227-9bab-4b7a7a20abc1",
+      "comment": "Click the No Arrow Tour Button",
+      "command": "click",
+      "target": "xpath=//button[@data-e2e=\"btn_no_arrow\"]",
+      "targets": [
+        ["css=.btn:nth-child(8)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'View No Arrow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7323ec0-76b0-4e6f-9e55-2c2ad4b791cc",
+      "comment": "Check that there is no element rendered",
+      "command": "assertElementNotPresent",
+      "target": "xpath=//div[@data-gtour-wrapper=\"noArrow\"]//div[@data-gtour-wrapper=\"noArrow\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec826d1f-f9f0-4df0-bddf-f5200e8a307c",
+      "comment": "Click on the No Arrow Complete Tour Button",
+      "command": "click",
+      "target": "xpath=//div[@data-gtour-wrapper=\"noArrow\"]//button[@data-gtourstep-complete-button=\"step1\"]",
+      "targets": [
+        ["css=.complete-button", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/div[2]/div/div[2]/button[4]", "xpath:idRelative"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Finish')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b720746c-57c7-4e7e-9b7f-be76a075c155",
+      "comment": "Click on the Default Arrow tour",
+      "command": "click",
+      "target": "xpath=//button[@data-e2e=\"btn_default_arrow\"]",
+      "targets": [
+        ["css=.btn:nth-child(14)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Default Arrow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9daa1acd-f7c0-40c4-b8a5-160a6f23e515",
+      "comment": "Check that the default arrow element is present",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@data-gtour-arrow=\"defaultArrow\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d0dffd8-f31d-43e1-8c6c-86c4bc61a6a2",
+      "comment": "Click the complete tour of the default arrow",
+      "command": "click",
+      "target": "xpath=//div[@data-gtour-wrapper=\"defaultArrow\"]//button[@data-gtourstep-complete-button=\"step1\"]",
+      "targets": [
+        ["css=.guided-tour-wrapper:nth-child(3) .complete-button > span", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/div[3]/div/div[2]/button[4]/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/button[4]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fb03221-75cb-4247-aa12-8b43ae9cb536",
+      "comment": "Click the custom arrow tour button",
+      "command": "click",
+      "target": "xpath=//button[@data-e2e=\"btn_icon_arrow\"]",
+      "targets": [
+        ["css=.btn:nth-child(21)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/button[3]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Icon Arrow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe6aab9d-74ec-493a-bdbd-5ba87f0b2655",
+      "comment": "Check that the custom arrow element is present",
+      "command": "assertElementPresent",
+      "target": "css=.my-arrow",
+      "targets": [
+        ["css=.my-arrow", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/div[4]/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "271d93ba-96c1-4575-adbd-79d17a8542b6",
+      "comment": "Click the complete tour of the custom arrow",
+      "command": "click",
+      "target": "xpath=//div[@data-gtour-wrapper=\"iconArrow\"]//button[@data-gtourstep-complete-button=\"step1\"]",
+      "targets": [
+        ["css=.guided-tour-wrapper:nth-child(4) .complete-button > span", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/div[4]/div/div[2]/button[4]/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[2]/button[4]/span", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "dabd0514-4a2f-4a3e-a3f4-564b65944619",
+    "name": "Overlay Element Tests",
+    "commands": [{
+      "id": "1ba1d983-258a-4d55-b281-d2f2d955d216",
+      "comment": "",
+      "command": "open",
+      "target": "https://trevormare.github.io/STGTour/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "311316c7-a7d9-4b64-94cd-66634a5235a8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5db0df52-5249-44cd-b160-44bd58872252",
+      "comment": "Wait for the elements to render",
+      "command": "waitForElementVisible",
+      "target": "linkText=Overlay Element",
+      "targets": [
+        ["linkText=Arrow Element", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//a[contains(text(),'Arrow Element')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div/div[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'help/arrow')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Arrow Element')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "f7a2273e-7785-461e-8709-16283197f79c",
+      "comment": "Navigate to the Overlay Element Page",
+      "command": "click",
+      "target": "linkText=Overlay Element",
+      "targets": [
+        ["linkText=Arrow Element", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Arrow Element')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div/div[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'help/arrow')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Arrow Element')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f31b37f4-8974-4bd3-aa23-6e8cebc043e1",
+      "comment": "Wait for the elements to render",
+      "command": "waitForElementVisible",
+      "target": "xpath=//button[@data-e2e=\"btn_no_overlay\"]",
+      "targets": [
+        ["css=.btn:nth-child(8)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'View No Arrow')]", "xpath:innerText"]
+      ],
+      "value": "2000"
+    }, {
+      "id": "80dd8b36-dd80-4f65-b987-2ff21f7880fe",
+      "comment": "Click the No Overlay Button",
+      "command": "click",
+      "target": "xpath=//button[@data-e2e=\"btn_no_overlay\"]",
+      "targets": [
+        ["css=.btn:nth-child(8)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'View No Arrow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bded1a6f-d365-41be-bf95-1e04c5f1c875",
+      "comment": "Check that there is no element rendered",
+      "command": "assertElementNotPresent",
+      "target": "xpath=//div[@data-gtour-overlay]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c78fbd3-67ab-4364-9e40-df3688524900",
+      "comment": "Click on the No Overlay Complete Tour Button",
+      "command": "click",
+      "target": "xpath=//div[@data-gtour-wrapper=\"NoOverlay\"]//div[@data-gtourstep-wrapper=\"step1\"]//button[@data-gtourstep-complete-button=\"step1\"]",
+      "targets": [
+        ["css=.complete-button", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/div[2]/div/div[2]/button[4]", "xpath:idRelative"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Finish')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b485b882-1cd2-44dd-95d3-33abff6f4449",
+      "comment": "Click on the Clickable Overlay",
+      "command": "click",
+      "target": "xpath=//button[@data-e2e=\"btn_close_overlay\"]",
+      "targets": [
+        ["css=.btn:nth-child(14)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Default Arrow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f6bbe90-293f-40c6-b320-fae1e9e6707a",
+      "comment": "Check that the default arrow element is present",
+      "command": "assertElementPresent",
+      "target": "xpath=//div[@data-gtour-overlay]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d5cd4eb-14a5-4e37-a1cd-bca1aea604a9",
+      "comment": "Click the overlay",
+      "command": "click",
+      "target": "xpath=//div[@data-gtour-overlay]",
+      "targets": [
+        ["css=.guided-tour-wrapper:nth-child(3) .complete-button > span", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/div[3]/div/div[2]/button[4]/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/button[4]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e8731504-419e-4feb-b0b2-bb6e11371f83",
+      "comment": "Check that the default arrow element is not present",
+      "command": "assertElementNotPresent",
+      "target": "xpath=//div[@data-gtour-overlay]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a706c4df-6edd-4c49-9f0d-6a3806aa8459",
+    "name": "Theming Tests",
+    "commands": [{
+      "id": "8b61251a-c551-4a4e-8fdd-28a680c6ce76",
+      "comment": "",
+      "command": "open",
+      "target": "https://trevormare.github.io/STGTour/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aac97fd8-5411-49ae-afa5-07544806569d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1050x660",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "263bea8d-632e-4968-a482-042ffad3e2b0",
+      "comment": "Wait for the elements to render",
+      "command": "waitForElementVisible",
+      "target": "linkText=Theming",
+      "targets": [
+        ["linkText=Arrow Element", "linkText"],
+        ["css=.active", "css:finder"],
+        ["xpath=//a[contains(text(),'Arrow Element')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div/div[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'help/arrow')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Arrow Element')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "2129a316-dbfd-4d94-a696-894f7a2ab822",
+      "comment": "Navigate to the Overlay Element Page",
+      "command": "click",
+      "target": "linkText=Theming",
+      "targets": [
+        ["linkText=Arrow Element", "linkText"],
+        ["css=.nav-item:nth-child(1) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Arrow Element')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div/div[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'help/arrow')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Arrow Element')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c6310562-2786-4c09-8d90-6ec7afff96ff",
+      "comment": "Wait for the elements to render",
+      "command": "waitForElementVisible",
+      "target": "xpath=//button[@data-e2e=\"btn_none_theme\"]",
+      "targets": [
+        ["css=.btn:nth-child(8)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'View No Arrow')]", "xpath:innerText"]
+      ],
+      "value": "2000"
+    }, {
+      "id": "3ad4a6a3-5250-4db6-9173-a9488eed33f8",
+      "comment": "Click the No Theme Button",
+      "command": "click",
+      "target": "xpath=//button[@data-e2e=\"btn_none_theme\"]",
+      "targets": [
+        ["css=.btn:nth-child(8)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'View No Arrow')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "df1ec0b7-c817-4737-b8ef-f79bacfab46a",
+      "comment": "Check that there is no element rendered",
+      "command": "assert",
+      "target": "xpath=//div[@data-gtour-wrapper=\"NoTheme\"]",
+      "targets": [],
+      "value": "verifyElementPresent | css=a[id='SearchList'][class*='disabled'] | "
+    }, {
+      "id": "30628f8e-8996-4b6e-8a60-1f3e0e069ef2",
+      "comment": "Click on the No Theme Cancel Tour Button",
+      "command": "click",
+      "target": "xpath=//div[@data-gtour-wrapper=\"NoTheme\"]//div[@data-gtourstep-wrapper=\"step1\"]//button[@data-gtourstep-cancel-button=\"step1\"]",
+      "targets": [
+        ["css=.complete-button", "css:finder"],
+        ["xpath=(//button[@type='button'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/div[2]/div/div[2]/button[4]", "xpath:idRelative"],
+        ["xpath=//button[4]", "xpath:position"],
+        ["xpath=//button[contains(.,'Finish')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bde8570-9bb6-4a40-8828-9ba0f6a62819",
+      "comment": "Click on the Default Theme Tour Button",
+      "command": "click",
+      "target": "xpath=//button[@data-e2e=\"btn_default_theme\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aeb0f513-99ee-42cb-908d-3182fb4472f9",
+      "comment": "Check that the default arrow element is present",
+      "command": "//assertElementPresent",
+      "target": "xpath=//div[@data-gtour-overlay]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a064f6aa-2e16-41c8-a746-b750f3938f97",
+      "comment": "Click on the Default Theme Cancel Tour Button",
+      "command": "click",
+      "target": "xpath=//div[@data-gtour-wrapper=\"DefaultTheme\"]//div[@data-gtourstep-wrapper=\"step1\"]//button[@data-gtourstep-cancel-button=\"step1\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bdb7285d-a425-455e-ab64-ff3551080681",
+      "comment": "Click on the Bootstrap Theme Tour Button",
+      "command": "click",
+      "target": "xpath=//button[@data-e2e=\"btn_bootstrap_theme\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "122b45ed-4cbf-49b7-81c9-817609b5f0b3",
+      "comment": "Check that the default arrow element is present",
+      "command": "//assertElementPresent",
+      "target": "xpath=//div[@data-gtour-overlay]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "050baec4-be06-4814-8306-2de2fbd12bd7",
+      "comment": "Click on the Bootstrap Theme Cancel Tour Button",
+      "command": "click",
+      "target": "xpath=//div[@data-gtour-wrapper=\"BootstrapTheme\"]//div[@data-gtourstep-wrapper=\"step1\"]//button[@data-gtourstep-cancel-button=\"step1\"]",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "601c0784-c7e2-4de8-bedd-dfa6a3633d3c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://trevormare.github.io/STGTour/"],
+  "plugins": []
+}
