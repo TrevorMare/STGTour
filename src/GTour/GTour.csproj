@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
       <PackageId>STGTour.GTour</PackageId>
-      <Version>1.0.5</Version>
+      <Version>1.0.6</Version>
       <Authors>Trevor Maré</Authors>
       <PackageTags>blazor;ui tour;guided tour;tour;stgtour;gtour;stgtour.gtour</PackageTags>
       <Description>
@@ -12,6 +12,7 @@
       <RepositoryUrl>https://github.com/TrevorMare/STGTour</RepositoryUrl>
       <PackageProjectUrl>https://github.com/TrevorMare/STGTour</PackageProjectUrl>
       <PackageReleaseNotes>
+        1.0.6 Included dependencies in nuget build.
         1.0.5 Removed project dependencies.
         1.0.4 Added attributes to assist in E2E testing.
         1.0.3 Cleaned up package dependencies and added readme.md
@@ -22,6 +23,7 @@
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <RepositoryType>Github</RepositoryType>
       <PackageReadmeFile>readme.md</PackageReadmeFile>
+      <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
@@ -43,13 +45,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GTour.Abstractions\GTour.Abstractions.csproj" PrivateAssets="All" />
-    <ProjectReference Include="..\GTour.Dependencies\GTour.Dependencies.csproj" PrivateAssets="All" />
+    <ProjectReference Include="..\GTour.Abstractions\GTour.Abstractions.csproj">
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <IncludeAssets>GTour.Abstractions.dll</IncludeAssets>
+    </ProjectReference>
+    <ProjectReference Include="..\GTour.Dependencies\GTour.Dependencies.csproj">
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <IncludeAssets>GTour.Dependencies.dll</IncludeAssets>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
     <None Include="..\..\readme.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
+
+  <Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths->WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))"/>
+    </ItemGroup>
+  </Target>
 
 </Project>

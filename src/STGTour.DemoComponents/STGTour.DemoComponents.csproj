@@ -7,6 +7,8 @@
     <SupportedPlatform Include="browser" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GTour.Abstractions\GTour.Abstractions.csproj" />
+    <ProjectReference Include="..\GTour.Dependencies\GTour.Dependencies.csproj" />
     <ProjectReference Include="..\GTour\GTour.csproj" />
   </ItemGroup>
   <ItemGroup>
