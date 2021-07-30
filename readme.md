@@ -26,7 +26,7 @@ To build this project you need to have Satan's tool installed (NodeJs) as this i
 Download package and install [nuget](https://www.nuget.org/packages/STGTour.GTour/)
 
 ```shell 
-    dotnet add package STGTour.GTour --version 1.0.2
+    dotnet add package STGTour.GTour --version 1.0.7
 ```
 
 ## Usage
