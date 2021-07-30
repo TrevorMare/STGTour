@@ -2,7 +2,7 @@
   {
     "outputFileName": "wwwroot/js/JsInteropPopper.min.js",
     "inputFiles": [
-      "npm/src/JsInteropPopper.js"
+      "wwwroot/js/JsInteropPopper.js"
     ],
     "minify": {
       "enabled": true,
@@ -13,7 +13,7 @@
   {
     "outputFileName": "wwwroot/js/JsInteropCommon.min.js",
     "inputFiles": [
-      "npm/src/JsInteropCommon.js"
+      "wwwroot/js/JsInteropCommon.js"
     ],
     "minify": {
       "enabled": true,
@@ -24,7 +24,7 @@
   {
     "outputFileName": "wwwroot/js/vendor.min.js",
     "inputFiles": [
-      "npm/node_modules/@popperjs/core/dist/umd/popper.min.js"
+      "wwwroot/js/node_modules/@popperjs/core/dist/umd/popper.min.js"
     ],
     "minify": {
       "enabled": true,
