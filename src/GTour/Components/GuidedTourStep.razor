@@ -2,7 +2,7 @@
 
 @if (IsActiveStep)
 {
-<div data-gtourstep-wrapper="@StepName" @ref="StepWrapperElement" class="guided-tour-step-wrapper @SelectedTheme.GTourStepWrapper @WrapperClass">
+<div @attributes=UnmatchedAttributes data-gtourstep-wrapper="@StepName" @ref="StepWrapperElement" class="guided-tour-step-wrapper @SelectedTheme.GTourStepWrapper @WrapperClass">
 
   @if (!string.IsNullOrEmpty(Title) || HeaderContent != null)
   {

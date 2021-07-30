@@ -14,6 +14,9 @@ namespace GTour.Components
   {
 
     #region Properties
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> UnmatchedAttributes { get; set; }
+
     [Inject]
     internal Abstractions.JsInterop.IJsInteropPopper JsInteropPopper { get; set; }
 

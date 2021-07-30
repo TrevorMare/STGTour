@@ -18,6 +18,9 @@ namespace GTour.Components
     #endregion
 
     #region Parameters
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> UnmatchedAttributes { get; set; }
+
     protected ElementReference StepWrapperElement { get; set; }
 
     [CascadingParameter]
