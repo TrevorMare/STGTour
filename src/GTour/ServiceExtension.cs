@@ -1,5 +1,4 @@
-﻿using GTour.Dependencies;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +15,8 @@ namespace GTour
 
       serviceCollection.AddSingleton<Abstractions.IGTourService, GTourService>();
 
-      serviceCollection.UseGTourDependencies();
+      serviceCollection.AddScoped<Abstractions.JsInterop.IJsInteropPopper, Interops.JsInteropPopper>();
+      serviceCollection.AddScoped<Abstractions.JsInterop.IJsInteropCommon, Interops.JsInteropCommon>();
 
       return serviceCollection;
     }

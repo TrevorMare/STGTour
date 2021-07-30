@@ -36,3 +36,4 @@ node_modules
 # Visual Studio 2015
 .vs/
 Prerender/output
+src/GTour/wwwroot/js/**.js

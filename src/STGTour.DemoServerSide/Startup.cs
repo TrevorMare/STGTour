@@ -1,5 +1,4 @@
 using GTour;
-using GTour.Dependencies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;

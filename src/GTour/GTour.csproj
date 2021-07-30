@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
       <PackageId>STGTour.GTour</PackageId>
-      <Version>1.0.6</Version>
+      <Version>1.0.7</Version>
       <Authors>Trevor Maré</Authors>
       <PackageTags>blazor;ui tour;guided tour;tour;stgtour;gtour;stgtour.gtour</PackageTags>
       <Description>
@@ -34,6 +34,9 @@
     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.2.0">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406">
+      <PrivateAssets>all</PrivateAssets>
+     </PackageReference>
   </ItemGroup>
   
   <ItemGroup>
@@ -49,10 +52,6 @@
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
       <IncludeAssets>GTour.Abstractions.dll</IncludeAssets>
     </ProjectReference>
-    <ProjectReference Include="..\GTour.Dependencies\GTour.Dependencies.csproj">
-      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
-      <IncludeAssets>GTour.Dependencies.dll</IncludeAssets>
-    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +63,18 @@
     <ItemGroup>
       <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths->WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))"/>
     </ItemGroup>
+  </Target>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="PreBuildEvent" >
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec Command="npm install" WorkingDirectory="wwwroot/js" />
+    <Message Importance="high" Text="Building Typescript" />
+    <Exec Command="npm run tsc" WorkingDirectory="wwwroot/js" />
   </Target>
 
 </Project>
