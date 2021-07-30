@@ -1,0 +1,35 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/js/JsInteropPopper.min.js",
+    "inputFiles": [
+      "wwwroot/js/JsInteropPopper.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/JsInteropCommon.min.js",
+    "inputFiles": [
+      "wwwroot/js/JsInteropCommon.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vendor.min.js",
+    "inputFiles": [
+      "wwwroot/js/node_modules/@popperjs/core/dist/umd/popper.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": false
+    },
+    "sourceMap": false
+  }
+]

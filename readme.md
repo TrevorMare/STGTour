@@ -66,7 +66,7 @@ Download package and install [nuget](https://www.nuget.org/packages/STGTour.GTou
 ### Add Styles to the _Host.cshtml (optional)
 
 ```html
-    <link rel="stylesheet" href="_content/GTour/css/styles.css" />
+    <link rel="stylesheet" href="_content/STGTour.GTour/css/styles.css" />
 ```
 
 ### Create a Tour
