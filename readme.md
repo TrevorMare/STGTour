@@ -11,7 +11,6 @@ Check out the documentation and a live [demo](https://trevormare.github.io/STGTo
 ## Important Notes
 This plugin relies on .net5 and can be ported if you want. The whole idea for me regarding this project was to spend some time on the framework. It might also not have all the features of one of the existing packages but I'm pretty sure it can be extended to do what you want. Another thing I wanted to try was to use the minimum javascript to see how far I can push Blazor.
 
-Additionally, for now this project uses Server Side Rendering and I will see if I can add a WASM demo as well.
 
 # Roll your own
 ## Build Requirements
