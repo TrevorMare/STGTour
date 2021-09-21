@@ -120,6 +120,7 @@ This project uses [popper.js](https://popper.js.org/) to align the tour steps. K
 
 Trevor Maré - [trevorm336@gmail.com](mailto:trevorm336@gmail.com)  
 Project Link - [GTour](https://github.com/TrevorMare/STGTour)
+STDoodle - [STDoodle](https://github.com/TrevorMare/STDoodle)
 
 Buy me a beer
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=JTM723EPNE5N6)
