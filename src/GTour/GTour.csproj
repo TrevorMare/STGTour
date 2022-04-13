@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
       <PackageId>STGTour.GTour</PackageId>
-      <Version>1.0.7</Version>
+      <Version>1.0.8</Version>
       <Authors>Trevor Maré</Authors>
       <PackageTags>blazor;ui tour;guided tour;tour;stgtour;gtour;stgtour.gtour</PackageTags>
       <Description>
@@ -11,16 +11,15 @@
       </Description>
       <RepositoryUrl>https://github.com/TrevorMare/STGTour</RepositoryUrl>
       <PackageProjectUrl>https://github.com/TrevorMare/STGTour</PackageProjectUrl>
-      <PackageReleaseNotes>
-        1.0.7 Collapsed dependencies into one package.
-        1.0.6 Included dependencies in nuget build.
-        1.0.5 Removed project dependencies.
-        1.0.4 Added attributes to assist in E2E testing.
-        1.0.3 Cleaned up package dependencies and added readme.md
-        1.0.2 Added the repository URL to nuget
-        1.0.1 Nuget links
-        1.0.0 Initial Release
-      </PackageReleaseNotes>
+      <PackageReleaseNotes>1.0.8 Fixed NodeJs dependencies.
+1.0.7 Collapsed dependencies into one package.
+1.0.6 Included dependencies in nuget build.
+1.0.5 Removed project dependencies.
+1.0.4 Added attributes to assist in E2E testing.
+1.0.3 Cleaned up package dependencies and added readme.md
+1.0.2 Added the repository URL to nuget
+1.0.1 Nuget links
+1.0.0 Initial Release	  </PackageReleaseNotes>
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
       <RepositoryType>Github</RepositoryType>
       <PackageReadmeFile>readme.md</PackageReadmeFile>
@@ -29,6 +28,7 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+    <Content Remove="tsconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,16 +57,18 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
-    <None Include="..\..\readme.md" Pack="true" PackagePath="\"/>
+    <None Include="..\..\readme.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
     <ItemGroup>
-      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths->WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))"/>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
     </ItemGroup>
   </Target>
 
-  <Target Name="DebugEnsureNodeEnv" BeforeTargets="PreBuildEvent" >
+
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="PreBuildEvent">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
